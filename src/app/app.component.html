@@ -1,8 +1,8 @@
-<h1>{{title}}</h1>
-<h2>{{name}}</h2>
-<button (click)="toggleBg()">{{bgExist ? "hideGg" : "showGg"}}</button>
-<div [ngStyle]="{color:color, background: bgExist ? inverseColor : 'none', padding:'50px'}"><strong>{{color}}</strong></div>
-<app-post></app-post>
-<app-post>123</app-post>
-<app-post><app-post></app-post></app-post>
-<app-post></app-post>
+<div class="container">
+  <h1>{{title}}</h1>
+  <h2>{{name}}</h2>
+
+  <app-form></app-form>
+  <app-post></app-post>
+</div>
+
