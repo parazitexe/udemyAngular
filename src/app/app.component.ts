@@ -8,30 +8,31 @@ import {Component, OnInit} from '@angular/core';
 export class AppComponent implements OnInit{
   title = 'udemyAngular';
   name = 'Filin';
-  inputValue = "";
-  img:string = "";
-  img1 = "https://via.placeholder.com/480x360?text=Vasia%20Filin";
-  img2 = "https://via.placeholder.com/400x300?text=Petia%20Suslik";
 
+  color:string = 'rgb(0,0,0)';
+  inverseColor:string = 'rgb(255,255,255)';
+  bgExist: boolean = true;
 
   ngOnInit(): void {
-    this.img = this.img1
-    setTimeout(()=>{
-      this.img = this.img2
-    },2000)
+/*    setInterval(()=>{
+          let R = Math.floor(Math.random() * 256);
+          let G = Math.floor(Math.random() * 256);
+          let B = Math.floor(Math.random() * 256);
+          let iR;
+          let iG;
+          let iB;
+
+          this.color = `rgb(${R}, ${G}, ${B})`
+          this.inverseColor = `rgb(${255-R}, ${255-G}, ${255-B})`
+          console.log(this.color)
+          console.log(this.inverseColor)
+          console.log("----")
+    },50)*/
   }
 
-
-  onChanged(event:Event){
-
-    this.inputValue = (<HTMLInputElement>(<KeyboardEvent>event).target).value;
-  }
-  onBlur(value:string){
-    this.inputValue = value;
+  toggleBg(){
+    this.bgExist = !this.bgExist;
   }
 
-  onClick(){
-    console.log("onClick")
-  }
 
 }

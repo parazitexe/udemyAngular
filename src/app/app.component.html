@@ -1,22 +1,8 @@
 <h1>{{title}}</h1>
 <h2>{{name}}</h2>
-<input
-  type="text"
-  (keyup.enter)="onChanged($event)"
-  (blur)="onBlur(inputText.value)"
-  #inputText
-  >
-
-<hr>
-<strong>{{inputValue}}</strong>
-
-<button (click)="onClick()">clickMe</button>
-<hr>
-<img src="{{img}}" alt="{{title}}">
-<img [src]=img [alt]=title>
-
+<button (click)="toggleBg()">{{bgExist ? "hideGg" : "showGg"}}</button>
+<div [ngStyle]="{color:color, background: bgExist ? inverseColor : 'none', padding:'50px'}"><strong>{{color}}</strong></div>
 <app-post></app-post>
-<app-post></app-post>
-<app-post></app-post>
-<app-post></app-post>
+<app-post>123</app-post>
+<app-post><app-post></app-post></app-post>
 <app-post></app-post>
